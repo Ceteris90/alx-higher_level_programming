@@ -6,12 +6,12 @@ reminder = abs(number) % 10
 if number < 0:
     digit = -1*reminder
     if digit == 0:
-        print(f"Last digit of {number:d} is {digit:d} and is Zero")
+        print(f"Last digit of {number:d} is {digit:d} and is 0")
     else:
         print(f"Last digit of {number:d} is {digit:d} and is less than 6 and not 0")
 elif reminder > 5:
     print(f"Last digit of {number:d} is {reminder:d} and is greater than 5")
 elif reminder == 0:
-    print(f"Last digit of {number:d} is {reminder:d} and is zero")
+    print(f"Last digit of {number:d} is {reminder:d} and is 0")
 else:
     print(f"Last digit of {number:d} is {reminder:d} and is less than 6 and not 0")
