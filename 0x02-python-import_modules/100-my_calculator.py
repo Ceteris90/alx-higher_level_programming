@@ -5,7 +5,7 @@ if __name__ == "__main__":
     argv = sys.argv[1:]
     argv_count = len(argv)
     operators = ["+", "-", "*", "/"]
-    if argv_count !=  3:
+    if argv_count != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     elif sys.argv[2] not in operators:
