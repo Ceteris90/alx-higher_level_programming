@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
 def replace_in_list(my_list, idx, element):
-
     len_my_list = len(my_list)
-
     if idx < 0:
-        return None
+        return my_list
     if idx => len_my_list:
-        return None
+        return my_list
     my_list[idx] = element
     return my_list
