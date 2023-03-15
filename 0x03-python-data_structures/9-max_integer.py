@@ -6,4 +6,10 @@ def max_integer(my_list=[]):
     for index in my_list:
         if index > biggest:
             biggest = index
+        
+        negative = []
+        if index < bigest:
+            negative.append(index)
+            bigest = max(negative)
+
     return biggest
