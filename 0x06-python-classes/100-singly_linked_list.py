@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class Node"""
+"""Class Node that defines a Node """
 
 
 class Node:
