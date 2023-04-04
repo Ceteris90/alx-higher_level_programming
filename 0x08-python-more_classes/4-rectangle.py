@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""
-class Rectangle define rectangle
-"""
 
 
 class Rectangle():
@@ -10,8 +7,29 @@ class Rectangle():
     def __init__(self, width=0, height=0):
         """ instantiation method for object creation
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
+
+    def __str__(self):
+        """ provides __str__ method for object when str()
+            or print() is called
+        """
+        string = ""
+        if self.width == 0 or self.height == 0:
+            return string
+
+        for i in range(0, self.height):
+            for j in range(0, self.width):
+                string += '#'
+            if i != self.height - 1:
+                string += '\n'
+        return string
+
+    def __repr__(self):
+        """ provides __repr__ method for object when repr()
+            is called, or eval().
+        """
+        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     @property
     def height(self):
