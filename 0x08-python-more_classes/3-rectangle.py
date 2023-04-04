@@ -7,23 +7,23 @@ class Rectangle():
     def __init__(self, width=0, height=0):
         """ instantiation method for object creation
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def __str__(self):
         """ provides __str__ method
             or print() is called
         """
-        string = ""
+        print_rect = ""
         if self.__width == 0 or self.__height == 0:
             return string
 
-        for i in range(0, self.__height):
-            for j in range(0, self.__width):
-                string += '#'
-            if i != self.__height - 1:
-                string += '\n'
-        return string
+        for value_1 in range(0, self.__height):
+            for value_2 in range(0, self.__width):
+                print_rect += '#'
+            if value_1 != self.__height - 1:
+                print_rect += '\n'
+        return print_rect
 
     @property
     def height(self):
