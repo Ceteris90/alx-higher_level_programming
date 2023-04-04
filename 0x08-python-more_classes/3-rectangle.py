@@ -16,7 +16,7 @@ class Rectangle():
         """
         print_rect = ""
         if self.__width == 0 or self.__height == 0:
-            return string
+            return print_rect
 
         for value_1 in range(0, self.__height):
             for value_2 in range(0, self.__width):
