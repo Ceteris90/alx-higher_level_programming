@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""
-class Rectangle define rectangle
-"""
 
 
 class Rectangle():
@@ -52,3 +49,18 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return 0
         return ((2 * self.__width) + (2 * self.__height))
+
+    def __str__(self):
+        """ provides __str__ method
+            or print() is called
+        """
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+
+        for i in range(0, self.__height):
+            for j in range(0, self.__width):
+                string += '#'
+            if i != self.height - 1:
+                string += '\n'
+        return string
