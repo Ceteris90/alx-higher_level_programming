@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-
 """ Class Rectangle define the rectangle """
 
-class Rectangle:
 
+class Rectangle:
     """
     empty rectangle class for later use
     """
