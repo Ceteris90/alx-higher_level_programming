@@ -49,6 +49,16 @@ If a and b are any type other than int or float, the function will raise a TypeE
         ...
     TypeError: a must be an integer
 
+    >>> add_integer(1, "5")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer("5", 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
     >>> add_integer(3, [5])
     Traceback (most recent call last):
         ...
