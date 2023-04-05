@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-"""
-class for Rectangle
-"""
+""" Class Rectangle """
 
 
 class Rectangle:
-    """
-    class Rectangle
-    """
+    """ Empty class Rectangle """
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """ intialization of rectangle """
+        """ method is executed """
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
@@ -48,42 +44,41 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """ rectangle area """
+        """ return rectangle area """
         return (self.__height * self.__width)
 
     def perimeter(self):
-        """ rectangle perimeter """
+        """ return rectangle perimeter """
         if self.__height == 0 or self.__width == 0:
             return 0
         else:
             return ((self.__height * 2) + (self.__width * 2))
 
     def __str__(self):
-        """ representation """
+        """ Prints string representation """
         str_repr = ''
         if self.__height == 0 or self.__width == 0:
             return str_repr
         else:
-            sym_print = str(self.print_symbol)
-            for value_1 in range(0, self.__height):
-                str_repr = str_repr + "{}".format(sym_print * self.__width)
-                if value_1 != self.__height - 1:
+            sym = str(self.print_symbol)
+            for i in range(0, self.__height):
+                str_repr = str_repr + "{}".format(sym*self.__width)
+                if i != self.__height - 1:
                     str_repr = str_repr + '\n'
             return (str_repr)
 
     def __repr__(self):
-        """ object representation """
-        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+        """ representation """
+        return("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     def __del__(self):
-        """ delete an instance """
+        """ instance """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """
-        comparing area of triangle
-        """
+        """ biggest rectangle """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
@@ -91,7 +86,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
 
+    @classmethod
     def square(cls, size=0):
-        """ New instances
-        """
+        """ new rectangle instance """
         return cls(size, size)
