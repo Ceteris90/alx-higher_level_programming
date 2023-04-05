@@ -71,10 +71,10 @@ class Rectangle:
         """ representation """
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
-    def __del__(self):
+    def __del__(cls):
         """ instance """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        cls.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
