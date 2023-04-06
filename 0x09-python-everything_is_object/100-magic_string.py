@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-from counter import Counter
-c = Counter()
-def magic_string(): return ", ".join(["Holberton" for i in range(c.inc())])
+def magic_string():
+    class Counter: i = 0
+    return ", ".join(["Holberton" for i in range(Counter.i := Counter.i + 1)])
