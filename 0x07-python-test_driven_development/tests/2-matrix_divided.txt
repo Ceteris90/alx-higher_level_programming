@@ -4,44 +4,197 @@ First import ``matrix_divided``
 
 Now use it:
 
-Basic usage:
-    >>> matrix = [[1, 2, 3], [4, 5, 6]]
-    >>> print(matrix_divided(matrix, 3))
-    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+# Test 1
+matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+div1 = 2
+print(matrix_divided(matrix1, div1))
+# Output: [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
 
-Non int/float inputs in lists of matrix:
-    >>> matrix = [['h', 'o', 'l'], ['b', 5, 6]]
-    >>> print(matrix_divided(matrix, 5))
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+# Test 2
+matrix2 = [[1.5, 2.5], [3.5, 4.5]]
+div2 = 0.5
+print(matrix_divided(matrix2, div2))
+# Output: [[3.0, 5.0], [7.0, 9.0]]
 
-Zero "div" input:
-    >>> matrix = [[1, 2, 3], [4, 5, 6]]
-    >>> print(matrix_divided(matrix, 0))
-    Traceback (most recent call last):
-    ...
-    ZeroDivisionError: division by zero
+# Test 3
+matrix3 = [[1, 2], [3, '4']]
+div3 = 2
+print(matrix_divided(matrix3, div3))
+# Output: TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Different list length in matrix input:
-    >>> matrix = [[1, 2, 3], [4, 5]]
-    >>> print(matrix_divided(matrix, 2))
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
+# Test 4
+matrix4 = [[1, 2], [3, 4], [5, 6, 7]]
+div4 = 2
+print(matrix_divided(matrix4, div4))
+# Output: TypeError: Each row of the matrix must have the same size
 
-Negative variables in list inputs:
-    >>> matrix = [[1, 2, -3], [4, 5, -6]]
-    >>> print(matrix_divided(matrix, 2))
-    [[0.5, 1.0, -1.5], [2.0, 2.5, -3.0]]
+# Test 5
+matrix5 = [[1, 2], [3, 4]]
+div5 = '2'
+print(matrix_divided(matrix5, div5))
+# Output: TypeError: div must be a number
 
-Empty matrix input:
-    >>> matrix = [[]]
-    >>> print(matrix_divided(matrix, 2))
-    [[]]
+# Test 6
+matrix6 = [[1, 2], [3, 4]]
+div6 = 0
+print(matrix_divided(matrix6, div6))
+# Output: ZeroDivisionError: division by zero
 
-No input:
-    >>> print(matrix_divided())
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+# Test 7
+matrix7 = [[1, 2, 3], [4, 5, 6]]
+div7 = 1
+print(matrix_divided(matrix7, div7))
+# Output: [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+# Test 8
+matrix8 = [[-1, 2, -3], [4, -5, 6], [-7, 8, -9]]
+div8 = -2
+print(matrix_divided(matrix8, div8))
+# Output: [[0.5, -1.0, 1.5], [-2.0, 2.5, -3.0], [3.5, -4.0, 4.5]]
+
+# Test 9
+matrix9 = []
+div9 = 3
+print(matrix_divided(matrix9, div9))
+# Output: []
+
+# Test 10
+matrix10 = [[1.5]]
+div10 = 0.5
+print(matrix_divided(matrix10, div10))
+# Output: [[3.0]]
+
+# Test 11
+matrix11 = [[1, 2], [3, 4], [5, 6]]
+div11 = 3
+print(matrix_divided(matrix11, div11))
+# Output: [[0.33, 0.67], [1.0, 1.33], [1.67, 2.0]]
+
+# Test 12
+matrix12 = [[1, 2], [3, 4], [5, 6]]
+div12 = 2.5
+print(matrix_divided(matrix12, div12))
+# Output: [[0.4, 0.8], [1.2, 1.6], [2.0, 2.4]]
+
+# Test 13
+matrix13 = [[1, 2], [3, 4]]
+div13 = 0
+try:
+    print(matrix_divided(matrix13, div13))
+except ZeroDivisionError as e:
+    print(e)
+# Output: division by zero
+
+# Test 14
+matrix14 = [[1, 2], [3, '4']]
+div14 = 2
+try:
+    print(matrix_divided(matrix14, div14))
+except TypeError as e:
+    print(e)
+# Output: matrix must be a matrix (list of lists) of integers/floats
+
+# Test 15
+matrix15 = [[1, 2], [3, 4, 5]]
+div15 = 2
+try:
+    print(matrix_divided(matrix15, div15))
+except TypeError as e:
+    print(e)
+# Output: Each row of the matrix must have the same size
+
+# Test 16
+matrix16 = 'not a matrix'
+div16 = 2
+try:
+    print(matrix_divided(matrix16, div16))
+except TypeError as e:
+    print(e)
+# Output: matrix must be a matrix (list of lists) of integers/floats
+
+# Test 17
+matrix17 = [[1, 2], [3, 4]]
+div17 = 'not a number'
+try:
+    print(matrix_divided(matrix17, div17))
+except TypeError as e:
+    print(e)
+# Output: div must be a number
+
+#Test 18
+
+matrix18 = [[1, 2], [3, 4]]
+div18 = 0.0000001
+print(matrix_divided(matrix18, div18))
+#Output: [[10000000.0, 20000000.0], [30000000.0, 40000000.0]]
+
+#Test 19
+
+matrix19 = [[1.23456789, 2.34567890], [3.45678901, 4.56789012]]
+div19 = 1.11111111
+print(matrix_divided(matrix19, div19))
+#Output: [[1.11, 2.11], [3.11, 4.12]]
+
+#Test 20
+
+matrix20 = [[1, 2], [3, 4]]
+div20 = -2
+print(matrix_divided(matrix20, div20))
+#Output: [[-0.5, -1.0], [-1.5, -2.0]]
+
+#Test 21
+
+matrix21 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+div21 = 3
+print(matrix_divided(matrix21, div21))
+#Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+#Test 22
+
+matrix22 = [[1, 2], [3, 4], [5, 6]]
+div22 = -1.5
+print(matrix_divided(matrix22, div22))
+#Output: [[-0.67, -1.33], [-2.0, -2.67], [-3.33, -4.0]]
+
+#Test 23
+
+matrix23 = [[1]]
+div23 = 1
+print(matrix_divided(matrix23, div23))
+#Output: [[1.0]]
+
+#Test 24
+
+matrix24 = [[1, 2], [3, 4]]
+div24 = 2.0
+print(matrix_divided(matrix24, div24))
+#Output: [[0.5, 1.0], [1.5, 2.0]]
+
+#Test 25
+
+matrix25 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+div25 = 0.000001
+print(matrix_divided(matrix25, div25))
+#Output: [[1000000.0, 2000000.0, 3000000.0], [4000000.0, 5000000.0, 6000000.0], [7000000.0, 8000000.0, 9000000.0]]
+
+#Test 26
+
+matrix26 = [[1, 2], [3, 4]]
+div26 = 0
+
+try:
+print(matrix_divided(matrix26, div26))
+except ZeroDivisionError as e:
+print(e)
+#Output: division by zero
+
+#Test 27
+
+matrix27 = [[1, 2], [3, '4']]
+div27 = 2
+
+try:
+print(matrix_divided(matrix27, div27))
+except TypeError as e:
+print(e)
+#Output: matrix must be a matrix (list of lists) of integers/floats
