@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 The text_indentation module for adding newlines after certain characters in a text.
 """
