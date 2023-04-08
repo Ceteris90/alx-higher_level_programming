@@ -3,6 +3,7 @@
 The text_indentation module for adding newlines after certain characters in a text.
 """
 
+
 def text_indentation(text):
     """ Adds two newlines """
 
