@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 The say_my_name module for printing a person's first and last name.
 """
