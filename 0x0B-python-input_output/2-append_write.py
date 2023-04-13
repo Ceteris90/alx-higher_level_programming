@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """ append a string at the end of text file """
 
 
