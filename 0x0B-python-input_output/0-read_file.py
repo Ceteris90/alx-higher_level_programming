@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """ read text using UTF-8 """
 
 
