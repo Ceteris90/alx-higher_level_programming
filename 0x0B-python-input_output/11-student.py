@@ -20,7 +20,7 @@ class Student:
         """
 
         my_dictionay = dict()
-        if attrs and all(isinstance(value, str) for value  in attrs):
+        if attrs and all(isinstance(value, str) for value in attrs):
             for value in attrs:
                 if value in self.__dict__:
                     my_dictionary.update({value: self.__dict__[value]})
@@ -31,5 +31,5 @@ class Student:
         """Replaces all attributes of the Student instance
         """
 
-        for value  in json:
+        for value in json:
             self.__dict__.update({value: json[value]})
