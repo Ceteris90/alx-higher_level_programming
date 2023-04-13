@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """ write into a file or doc """
 
 def write_file(filename="", text=""):
