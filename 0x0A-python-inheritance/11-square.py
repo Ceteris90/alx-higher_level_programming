@@ -1,6 +1,5 @@
-
 #!/usr/bin/python3
-"""Module 11-square.
+"""
 Creates a Square class.
 """
 
@@ -10,11 +9,13 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Represents a square.
+    """
+    Represents a square.
     """
 
     def __init__(self, size):
-        """Initializes a Square.
+        """
+        Initializes a Square.
         """
 
         self.integer_validator("size", size)
