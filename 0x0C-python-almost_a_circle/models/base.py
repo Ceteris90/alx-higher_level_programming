@@ -19,10 +19,10 @@ class Base:
                 -id : instance id
         """
 
-        if isinstance(id, (not (None), int)):
+        if not isinstance(id, (int, None)):
             raise TypeError("id must be an integer and Not None")
 
-        if isinstance(id, not (None)):
+        if not isinstance(id, None):
             self.id = id
         else:
             Base.__nb_objects += 1
