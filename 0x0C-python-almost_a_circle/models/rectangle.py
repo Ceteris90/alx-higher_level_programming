@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Create a Rectangle class, inheriting from Base.
 """
-import json as jp
+import json
 from models.base import Base
 
 
@@ -24,54 +24,47 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    @getter
+    @property
     def width(self):
-        """Retrieves__width"""
-
+        """Retrieves width"""
         return self.__width
 
-    @getter
+    @property
     def height(self):
-        """Retrieves__height"""
-
+        """Retrieves height"""
         return self.__height
 
-    @getter
+    @property
     def x(self):
-        """Retrieves__x"""
-
+        """Retrieves x"""
         return self.__x
 
-    @getter
+    @property
     def y(self):
-        """Retrieves__y"""
-
+        """Retrieves y"""
         return self.__y
 
-    @setter
+    @width.setter
     def width(self, value):
-        """width__value"""
-
+        """width value"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
-    @setter
+    @height.setter
     def height(self, value):
-        """height__value"""
-
+        """height value"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    @setter
+    @x.setter
     def x(self, value):
-        """x__value"""
-
+        """x value"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -80,8 +73,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """y__value"""
-
+        """y value"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -91,12 +83,10 @@ class Rectangle(Base):
     def area(self):
         """Area
         """
-
         return self.__width * self.__height
 
     def display(self):
         """Prints the Rectangle"""
-
         for y in range(0, self.__y):
             print()
         for i in range(0, self.__height):
@@ -108,7 +98,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns a string representation"""
-
         stg = "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
         return stg
@@ -122,7 +111,6 @@ class Rectangle(Base):
             - x
             - y
         """
-
         if args is not None and len(args) != 0:
             if len(args) >= 1:
                 if not isinstance(args[0], (int, None)):

@@ -2,7 +2,7 @@
 """ Module for creating the Base class """
 
 
-import json as js
+import json
 import os
 import csv
 
