@@ -1,10 +1,8 @@
--- Select LEFT JOIN with Where clausule
--- Execute: cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
-SELECT a.name
-FROM tv_genres a
-LEFT JOIN tv_show_genres b
-ON a.id = b.genre_id
-LEFT JOIN tv_shows c
-ON b.show_id = c.id
-WHERE c.title = 'Dexter'
-ORDER BY 1 ASC;
+-- Use LEFT JOIN and COUNT
+-- Execute: cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+SELECT b.name AS genre, count(a.show_id) AS number_of_shows
+FROM tv_show_genres a 
+LEFT JOIN tv_genres b 
+ON a.genre_id = b.id
+GROUP BY a.genre_id
+ORDER BY 2 DESC;
