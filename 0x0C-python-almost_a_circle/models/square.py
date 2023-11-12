@@ -56,8 +56,7 @@ class Square(Rectangle):
             - x : attribute
             - y : attribute
         """
-
-        if not isinstance(args, None) and len(args) != 0:
+        if args is not None and len(args) != 0:
             if len(args) >= 1:
                 if not isinstance(args[0], (int, None)):
                     raise TypeError("id must be an integer")
