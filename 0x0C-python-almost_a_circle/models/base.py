@@ -84,3 +84,7 @@ class Base:
                 my_list[i] = cls.create(**my_list[i])
         
         return my_list
+
+
+if __name__ == "__main__":
+    pass

@@ -85,3 +85,6 @@ class Square(Rectangle):
 
         my_dict = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
         return my_dict
+
+if __name__ == "__main__":
+    pass

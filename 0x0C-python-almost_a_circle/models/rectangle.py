@@ -144,3 +144,6 @@ class Rectangle(Base):
         my_dict = {'id': self.id, 'width': self.__width,
                    'height': self.__height, 'x': self.__x, 'y': self.__y}
         return my_dict
+
+if __name__ == "__main__":
+    pass

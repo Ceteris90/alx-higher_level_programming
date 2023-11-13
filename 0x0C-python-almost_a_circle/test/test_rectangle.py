@@ -1,5 +1,17 @@
 #!/usr/bin/python3
-"""Defines unittests for models/rectangle.py
+
+"""Defines unittests for models/rectangle.py.
+Unittest classes:
+    TestRectangle_instantiation - line 25
+    TestRectangle_width - line 114
+    TestRectangle_height - line 190
+    TestRectangle_x - line 262
+    TestRectangle_y - line 334
+    TestRectangle_order_of_initialization - line 402
+    TestRectangle_area - line 430
+    TestRectangle_update_args - line 538
+    TestRectangle_update_kwargs - line 676
+    TestRectangle_to_dictionary - line 788
 """
 import io
 import sys
@@ -23,9 +35,9 @@ class TestRectangle_instantiation(unittest.TestCase):
             Rectangle(1)
 
     def test_two_args(self):
-        r_1 = Rectangle(10, 2)
-        r_2 = Rectangle(2, 10)
-        self.assertEqual(r_1.id, r_2.id - 1)
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r1.id, r2.id - 1)
 
     def test_three_args(self):
         r1 = Rectangle(2, 2, 4)
