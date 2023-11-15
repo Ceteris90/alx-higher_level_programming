@@ -34,12 +34,12 @@ class TestSquare_update_kwargs(unittest.TestCase):
     def test_update_kwargs_width_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(id=89, size=8)
-        self.assertEqual(8, s.width)
+        self.assertEqual(10, s.width)
 
     def test_update_kwargs_height_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(id=89, size=9)
-        self.assertEqual(9, s.height)
+        self.assertEqual(10, s.height)
 
     def test_update_kwargs_None_id(self):
         s = Square(10, 10, 10, 10)

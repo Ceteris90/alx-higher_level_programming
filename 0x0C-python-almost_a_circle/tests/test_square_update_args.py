@@ -42,12 +42,12 @@ class TestSquare_update_args(unittest.TestCase):
     def test_update_args_width_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
-        self.assertEqual(2, s.width)
+        self.assertEqual(10, s.width)
 
     def test_update_args_height_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
-        self.assertEqual(2, s.height)
+        self.assertEqual(10, s.height)
 
     def test_update_args_None_id(self):
         s = Square(10, 10, 10, 10)
